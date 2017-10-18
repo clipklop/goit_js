@@ -57,6 +57,7 @@
 
 ## Задание 4
 Перепишите if с использованием оператора '?':
+```js
 var a = 1, b = 2;
 
 if (a + b >= 3) {
@@ -64,12 +65,14 @@ if (a + b >= 3) {
 } else {
   result = 'Noup!';
 }
+```
 
 
 ## Задание 5
 Перепишите if..else с использованием нескольких операторов '?':
 var name = 'admin', text;
 
+```js
 if (name == 'admin') {
   text = 'Hi';
 } else if (name == 'manager') {
@@ -79,6 +82,7 @@ if (name == 'admin') {
 } else {
   text = '';
 }
+```
 
 
 ### Codewars
