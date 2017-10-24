@@ -1,0 +1,19 @@
+//
+//	Перепишите if..else с использованием нескольких операторов '?':
+//
+//	var name = 'admin', text;
+//
+//	if (name == 'admin') {
+//	  text = 'Hi';
+//	} else if (name == 'manager') {
+//	  text = 'Hello';
+//	} else if (name == '') {
+//	  text = 'No login';
+//	} else {
+//	  text = '';
+//	}
+//
+var name = 'admin', text = null;
+//
+(name === 'admin') ? text = 'Hi' : (name === 'manager') ? text = 'Hello' : (name === '') ? text = 'No login': text = '';
+console.log(text);

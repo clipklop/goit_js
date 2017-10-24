@@ -1,0 +1,21 @@
+//
+// Ќапишите код, который будет запрашивать логин пользовател¤ (prompt).
+// 	≈сли посетитель вводит 'admin', то спрашивать пароль,
+// 	если нажал отмена (escape) Ч выводить 'Canceled',
+// 	если вводит что-то другое Ч 'Access denied'.
+// ѕароль провер¤ть так.
+// 	≈сли введЄн пароль 'passw0rd',
+// 		то выводить 'Welcome home!',
+// 		иначе Ч 'Wrong password',
+// 	при отмене Ч 'Canceled'.
+//
+var login = null;
+var pass = null;
+//
+login = prompt ('Login:');
+if (login === 'admin') {
+	pass = prompt ('Password:');
+	if (pass === 'passw0rd') alert ('Welcome home!');
+	else if (pass === null) alert ('Canceled'); else alert ('Wrong password');
+	}
+else if (login === null) alert ('Canceled'); else alert ('Access denied');

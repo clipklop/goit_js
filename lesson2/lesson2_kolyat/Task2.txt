@@ -1,0 +1,12 @@
+//
+//	»спользу¤ конструкцию if..else, напишите код, который будет спрашивать: '¬ведите любое целое число?'
+//
+//	«атем выведите alert: 1, если значение больше нул¤, -1, если значение меньше нул¤, 0, если значение равно нулю.
+//
+var answer = '0';
+var any_num = 0;
+var any_str = prompt ('¬ведите любое целое число?');
+//
+if (isNaN(+any_str) || any_str === null) answer = 'Not a number!'; else any_num = +any_str;
+if (any_num > 0) answer = '1'; else if (any_num < 0) answer = '-1';
+alert(answer);
