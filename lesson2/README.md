@@ -70,9 +70,9 @@ if (a + b >= 3) {
 
 ## Задание 5
 Перепишите if..else с использованием нескольких операторов '?':
+```js
 var name = 'admin', text;
 
-```js
 if (name == 'admin') {
   text = 'Hi';
 } else if (name == 'manager') {
