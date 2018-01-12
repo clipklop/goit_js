@@ -9,28 +9,106 @@
 <script type="text/javascript">
 
 	
-// ## 1
+// ## 1 Infinite Loop
+
 while (true) {
 	var name = prompt("Please enter a number greater than 100");
 	if (name <= 100) {
 		console.log("Your number is less than 100. Please try again.");
-	} else {
+	} else if (name > 100) {
 		console.log("You've done it!");
+		break;
+	} else {
+		console.log("Wasted!");
 		break;
 	}
 }
 
+// ## 2 Natural number
+// Натуральное число, большее 1, называется простым, если оно ни на что не делится, кроме себя и 1.
+// Другими словами, n > 1 – простое, если при делении на любое число от 2 до n-1 есть остаток.
+// Создайте код, который выводит все простые числа из интервала от 2 до 10. Результат должен быть: 2,3,5,7.
+// P.S. Код также должен легко модифицироваться для любых других интервалов.
+
+var n = 2;
+
+while (n <= 25) {	
+var result = 1;
+	for (var j = 2; j <= Math.sqrt(n); j++) {
+		result = result && (n % j);
+	}
+	if (result) {
+		console.log(n);
+	}
+	n++;
+}
 
 
-// ## 2
+// ## 3 (FizzBuzz)
+// Напишите программу, которая выводит через console.log все числа от 1 до 100, с двумя исключениями. Для чисел, нацело делящихся на 3, она должна выводить ‘Fizz’, а для чисел, делящихся на 5 (но не на 3) – 'Buzz'.
+
+for (var i = 1; i < 101; i++) {
+	if (i % 3 == 0) {
+		console.log("Fizz");
+	} else if (i % 5 == 0) {
+		console.log("Buzz");
+	} else {
+		console.log(i);
+	}
+}
 
 
+// ## 4 (FizzBuzz 2)
+// Исправьте предыдущую задачу FizzBuzz так, чтобы она выводила «FizzBuzz» для всех чисел, которые делятся и на3, и на 5.
+
+for (var i = 1; i < 101; i++) {
+	if (i % 3 == 0 && i % 5 == 0) {
+		console.log("FizzBuzz");
+	} else if (i % 3 == 0) {
+		console.log("Fizz");
+	} else if (i % 5 == 0) {
+		console.log("Buzz");
+	} else {
+		console.log(i);
+	}
+}
 
 
+// ## 5 Chess board
+// Напишите программу, создающую строку, содержащую решётку 8х8, в которой линии разделяются символами новой строки. На каждой позиции либо пробел, либо \#. В результате должна получиться шахматная доска.
+
+var hash = '#';
+var space = ' ';
+var row = 8;
+var col = 8;
 
 
+for (var i = 0; i < row; i++) {
+	var result = '';		
+	for (var j = 0; j < col; j++) {
+		if (i % 2 == 0 && j % 2 == 0) {
+			result += hash
+		} else if (i % 2 == 1 && j % 2 == 1) {
+			result += hash
+		} else {
+			result += space
+		} 
+	
+	}
+	console.log(result)	
+}
 
 
+// ## 6 pow
+// Напишите функцию pow(x,n), которая возвращает x в степени n. Иначе говоря, умножает x на себя n раз и возвращает результат.
+// pow(3, 2) = 3 * 3 = 9
+// pow(1, 100) = 1 * 1 * ...* 1 = 1
+
+var pow = function(x, n) {
+	// x ** n
+	return x * x * (n - 1);
+}
+console.log(pow(3, 2))
 
 
 </script>
