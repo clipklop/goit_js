@@ -33,6 +33,7 @@ while (true) {
 var n = 2;
 
 while (n <= 25) {	
+
 var result = 1;
 	for (var j = 2; j <= Math.sqrt(n); j++) {
 		result = result && (n % j);
@@ -40,6 +41,7 @@ var result = 1;
 	if (result) {
 		console.log(n);
 	}
+	
 	n++;
 }
 
