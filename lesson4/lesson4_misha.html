@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Examples</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+// ## 1. Последовательность чисел Фибоначчи вычисляется по формуле формулу F(n) = F(n-1) + F(n-2). В ней каждое следующее число вычисляется как сумма двух предыдущих. Первые два числа равны 1 и 1. Напишите функцию fib(n), которая возвращает n-е число Фибоначчи. Например:
+console.log(fib(3)); //2
+console.log(fib(7)); //13
+console.log(fib(27)); //5527939700884757
+
+function fib(n) {
+    if (n < 1) {
+        return 0;
+    } else if (n <= 2) {
+        return 1;
+    } else {
+        return fib(n - 2) + fib(n - 1);
+    }
+};
+
+
+// ## 2. Напишите функцию checkSpam которая проверяет строку на содержание слов: spam, sex.
+
+console.log(checkSpam('get new Sex videos')); // true
+console.log(checkSpam('[SPAM] How to earn fast money?')); // true
+console.log(checkSpam('New PSD template')); // false
+
+function checkSpam(string) {
+    if (string.match(/sex/gi) || string.match(/spam/ig)) {
+		return true;
+	} else {
+		return false;
+	}
+};
+
+
+// ## 3. (Троеточие) Напишите функцию, которая принимает на вход строку и возвращает ее неизменной если ее длина не превышает 20 символов. Если длинна больше 20, то обрезает строку и добавляет в конец строки '...'
+
+let stringExcerpt = (string) => {
+	if (string.length > 20) {
+		return string.slice(0, 21) + "...";
+	}
+}
+
+
+// 4. Codewars. Given an input n, write a function always that returns a function which returns n. Ruby should return a lambda or a proc.
+
+console.log(three = always(3));
+// three() /* returns 3 */
+
+function always(n) {
+	return () => n;
+}
+
+</script>
+</body>
+</html>
