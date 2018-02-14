@@ -7,8 +7,166 @@
     <title>Lesson 5 Homework</title>
 </head>
 <body>
-    <script>
-			
-    </script>
+	<script>
+
+		// ## 0.1 Tasks during lesson
+		let itbe = {
+			city: 'albuquerque',
+			size: 100500,
+			productivity: 'average',
+			adequateness: 'none'
+		};
+
+		let nothingness = {};
+
+		// check if Object is empty
+		function isEmpty(param) {
+			for (key in param) {
+				if (param.hasOwnProperty(key)) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+			return JSON.stringify(param) === JSON.stringify({}); // W00T! just use this without iteration :D
+		}
+		
+		// or use this one
+		Object.keys(itbe).length === 0 && itbe.constructor === Object
+
+
+		// ## 0.2
+		let salaries = {
+			junior: 1000,
+			middle: 2500,
+			senior: 3500,
+			lead: 5000
+		};
+
+		let summary = 0;
+
+		for (salary in salaries) {
+			summary += salaries[salary];
+		}
+
+
+		// ## 0.3
+		let elementsGuideMe = ['fire', 'earth', 'water', 'wind', 69, 77];
+
+		let lastElem = function(arr) {
+			return arr[arr.length - 1]; // arr.pop()
+		};
+		
+
+		// ## 0.4
+		let addNewElem = function(arr, elem) {
+			arr.push(elem);
+			return arr;
+		}
+		console.log(addNewElem(elementsGuideMe, 'doggy'));
+		
+
+		// ## 0.5
+		let fruits = ['apple', 'orange'];
+		fruits.push('kiwi');
+		fruits[fruits.length - 2] = 'pear';
+		console.log(fruits.shift());
+		fruits.unshift('apricot', 'peach');
+
+		
+		// ## 0.6
+		let randomElem = function(arr) {
+			let rand = Math.floor(Math.random() * arr.length);
+			return arr[rand];
+		};
+		randomElem(fruits);
+
+
+		// ## 0.7 Make function find(arr, value) that search through an array 'arr' a value 'value' and returns
+		// its position, or -1 if not found.
+		let find_all = function(arr, value) {
+			return arr.includes(value) ? arr.indexOf(value) : -1;
+		};
+
+
+		// ## 0.8 Long text...; 
+		let numbArray = [5, 7, 4, 8, 3, 0]; 
+
+		let filtered = function(arr, a=3, b=5) {
+			for (let i = 0; i < arr.length; i++) {
+				if (a <= arr[i] && arr[i] <= b) {
+					console.log(arr[i]);
+				}
+			}
+		};
+		
+
+		// ## Задание 1 (Кто первым решил больше всех задач). Напиште код который выведет сотрудника
+		// 				который выполнил больше всех задач.	Например:
+		var tasksCompleted = {
+			'Anna': 29,
+			'Serg': 35,
+			'Elena': 1,
+			'Anton': 99
+		};
+		
+		let greatestResult = function(obj) {
+			let tracking = 0;
+			let name = '';
+			for (var i in obj) {
+				if (tracking < obj[i]) {
+					tracking = obj[i];
+					name = i;
+				} 
+			}
+			return name;
+		}
+
+		
+		// ## Задание 2(Изменение численных свойств). Напишите функцию multiplyNumeric которая принимает
+		// на вход объект и возвращает объект в котором все числовые значения у свойств умножены на 2.
+		var image = {
+			width: 100,
+			height: 400,
+			title: 'Cool image'
+		};
+
+		let multiplyNumeric = function(obj) {
+			for (i in obj) {
+				if (typeof obj[i] === 'number') {
+					obj[i] *= 2;
+				} else {
+					continue;
+				}
+			}
+			return obj;
+		};
+
+
+		// ## Задание 3(Калькулятор)
+		// Напишите код, который:
+		// -	Запрашивает по очереди значения при помощи prompt и сохраняет их в массиве.
+		// -	Заканчивает ввод, как только посетитель введёт пустую строку, не число или нажмёт «Отмена».
+		// -	При этом ноль 0 не должен заканчивать ввод, это разрешённое число.
+		// -	Выводит сумму всех значений массива когда ввод прекращен.
+		function calc() {
+			let ask = '';
+			let numbers = [];
+			let result = 0;
+				while (numbers.length < 2) {
+					ask = parseInt(prompt("Enter two number One by One: "), 10);
+					if (ask == 'null' || isNaN(ask)) {
+						console.log("Sorry, you didn't provide a number. Please try again.");
+						continue;
+					} else {
+						numbers.push(ask);
+					}
+				}
+			result = numbers[0] + numbers[1];
+			return result;
+			}
+
+
+	</script>
 </body>
 </html>
