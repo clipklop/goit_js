@@ -51,23 +51,26 @@
 			new_arr.map(function(xarr) { return xarr.length });
 
 
+			// ## Задание 1(Удаление css клссов).
+			obj = {
+				className: 'my menu menu'
+			};
 
-			// // ## Задание 1(Удаление css клссов).
-			// var obj = {
-			// 	className: 'open menu'
-			// };
-
-			// // Напишите функцию removeClass(obj, cls), которая удаляет класс cls, если он есть:
-			// removeClass(obj, 'open'); // obj.className='menu'
-			// removeClass(obj, 'blabla'); // без изменений
-			// //P.S.Дополнительное усложнение.Функция должна корректно обрабатывать дублирование класса в строке:
-			// obj = {
-			// 	className: 'my menu menu'
-			// };
-
-			// removeClass(obj, 'menu');
-
-			// console.log( obj.className ); // 'my'
+			let removeClass = function(obj, str) {
+				let splitter = obj.className.split(' ');
+				console.log(splitter);
+				for (let i = 0; i < splitter.length; i++) {
+					if (splitter[i] === str) {
+						// delete splitter[i];
+						splitter.splice(i, 1);
+						i--;
+					}
+				}
+				obj.className = splitter.join(' ');
+				return obj.className;
+			};
+			console.log(removeClass(obj, 'menu'));
+			
 
 	
 
