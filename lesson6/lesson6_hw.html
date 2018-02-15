@@ -69,8 +69,46 @@
 				obj.className = splitter.join(' ');
 				return obj.className;
 			};
-			console.log(removeClass(obj, 'menu'));
-			
+			removeClass(obj, 'menu');
+
+
+			// ## Задание 2 (Сортировка массива строк). Есть массив строк arr. Создайте массив arrSorted — из тех же элементов, 
+			//											но отсортированный.Исходный массив не должен меняться.
+
+			let arr_lang = ['HTML', 'JavaScript', 'CSS'];
+
+			let arrSorted = function(arr) {
+				let temp = arr.slice();
+				return temp.sort();
+			}
+
+			// console.log( arrSorted(arr_lang) ); // CSS, HTML, JavaScript
+			// console.log( arr_lang ); // HTML, JavaScript, CSS (без изменений)
+
+
+			// ## Задание 3 (Random sort). Необходимо отсортировать массив в случайном порядке используя метод sort.
+			let numbArr = [1, 2, 3, 4, 5];
+
+			numbArr.sort(function() { 
+				return .5 - Math.random(); // random could be not that academically correct.
+			 });
+
+			//console.log( numbArr ); // элементы в случайном порядке, например [3,5,1,2,4]	
+
+
+			// ## Задание 4 (Object sort). Напишите код, который отсортирует массив объектов people по полю age.
+			//Например:
+			var vasya = { name: 'Вася', age: 23 };
+			var masha = { name: 'Маша', age: 18 };
+			var vovochka = { name: 'Вовочка', age: 6 };
+
+			var people = [ vasya , masha , vovochka ];
+
+			... ваш код ...
+
+			// теперь people: [vovochka, masha, vasya]
+			console.log(people[0].age) // 6
+			Выведите список имён в массиве после сортировки.
 
 	
 
