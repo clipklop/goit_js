@@ -17,7 +17,7 @@
 				}
 				return classes.join(' ');
 			};
-			addClass(obj, 'new');
+			// addClass(obj, 'new');
 
 
 			// ## Task 0.2
@@ -30,7 +30,7 @@
 				}
 				return splitter.join('');
 			}
-			toCamelCase('list-style-image');
+			// toCamelCase('list-style-image');
 
 
 			// ## Task 0.3
@@ -38,7 +38,7 @@
 			let reverseSort = function(arr) {
 				return arr.sort(function(a, b) { return a - b; }).reverse();
 			};
-			reverseSort(arr);
+			// reverseSort(arr);
 			
 
 			// ## Task 0.4. Код ниже получает из массива строк новый массив,	содержащий их длины.Перепишите его: уберите цикл,	используйте вместо него метод map.
@@ -69,7 +69,7 @@
 				obj.className = splitter.join(' ');
 				return obj.className;
 			};
-			removeClass(obj, 'menu');
+			// removeClass(obj, 'menu');
 
 
 			// ## Задание 2 (Сортировка массива строк). Есть массив строк arr. Создайте массив arrSorted — из тех же элементов, 
@@ -98,18 +98,75 @@
 
 			// ## Задание 4 (Object sort). Напишите код, который отсортирует массив объектов people по полю age.
 			//Например:
+			var petya = { name: 'Petya', age: 39 };
+			var misha = { name: 'Misha', age: 5 };
 			var vasya = { name: 'Вася', age: 23 };
 			var masha = { name: 'Маша', age: 18 };
 			var vovochka = { name: 'Вовочка', age: 6 };
 
-			var people = [ vasya , masha , vovochka ];
+			var people = [ petya, misha, vasya , masha , vovochka ];
 
-			... ваш код ...
-
+			let objectSort = function(arr) {
+				arr.sort(function(a, b) {
+					return a.age - b.age
+				});
+				let list = [];
+				for (let i = 0; i < arr.length; i++) {
+					list.push(arr[i].name);
+				}
+				return list; 
+			}
+			// objectSort(people);
 			// теперь people: [vovochka, masha, vasya]
-			console.log(people[0].age) // 6
-			Выведите список имён в массиве после сортировки.
+			// console.log(people[0].age) // 6
+			// console.log(people)
+			// Выведите список имён в массиве после сортировки.
 
+
+			// ## Задание 5 (Проверка на палиндром). Палиндром - это строка которая читается
+			// с обоих сторон одинаково. Например: Анна, оно, А роза упала на лапу Азора.
+			// Необходимо написать функцию isPal(string) которая возвращает true или false
+			// в зависимости от того является ли строка палиндромом или нет.
+			
+			let isPal = function(str) {
+				let a = str.toLowerCase().split(' ').join(''), b = a.split('').reverse().join('');
+				return a === b;
+			}
+
+			// console.log(isPal('Anna')); // true
+			// console.log(isPal('А роза упала на лапу Азора')); //true
+			// console.log(isPal('Вася')); //false
+			// console.log(isPal('12321')); //true
+			// console.log(isPal('123212')); //false
+
+			
+			// ## Задание 6 (Уникальные элементы массива). Напишите функцию unique(arr),
+			// которая возвращает массив, содержащий только уникальные
+			// элементы arr (arr — массив строк).
+			let strings = ['кришна', 'кришна', 'харе', 'харе', 'харе', 'харе', 'кришна', 'кришна', '8-()' ];
+
+			let unique = function(arr) {
+				let temp = [];
+				for (let i = 0; i < arr.length; i++) {
+					if (!temp.includes(arr[i])) { // arrValues.indexOf('arr[i]') > -1
+						temp.push(arr[i])
+					}
+				}
+				return temp.join(', ');
+			}
+			// console.log( unique(strings) ); // кришна, харе, 8-()
+
+
+			// ## Задание 7 (Анаграммы). Анаграммы — слова, состоящие из одинакового
+			// количества одинаковых букв, но в разном порядке. Например:
+			// воз - зов киборг - гробик корсет - костер - сектор
+			// Напишите функцию anClean(arr), которая возвращает массив слов, очищенный от анаграмм.
+			let anagram = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', 'костер', 'сектор'];
+
+			let anClean = function(arr) {
+				return
+			}
+			console.log( anClean(anagram) ); // 'воз,киборг,корсет' или 'ЗОВ,гробик,сектор'
 	
 
     </script>
