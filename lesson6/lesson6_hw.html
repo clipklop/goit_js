@@ -164,9 +164,35 @@
 			let anagram = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', 'костер', 'сектор'];
 
 			let anClean = function(arr) {
-				return
+				let tempObj = {}, tempStr = [];
+				for (let i = 0; i < arr.length; i++) {
+					let sorted = arr[i].toLowerCase().split('').sort().join('')
+					tempObj[sorted] = arr[i];
+				}
+				
+				for (let obj in tempObj) {
+					tempStr.push(tempObj[obj]);
+				}			
+				return tempStr;
 			}
-			console.log( anClean(anagram) ); // 'воз,киборг,корсет' или 'ЗОВ,гробик,сектор'
+			// console.log( anClean(anagram) ); // 'воз,киборг,корсет' или 'ЗОВ,гробик,сектор'
+
+
+			// ## 8. Make the sum() function return the sum of the values in the passed in array.
+			// Your solution must use the reduce() function of the built -in javascript
+			// Array object.If you're not familiar with reduce(), reading over the documentation may help.
+
+			function sum(array) {
+				// Use array.reduce() to find and return the
+				// sum of the values in array.
+				return array.reduce(function(a, b) {
+					return a + b;
+				});
+			}
+
+			let someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+			// console.log(sum(someNumbers)); // should return 55
 	
 
     </script>
