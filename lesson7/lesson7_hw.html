@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 7</title>
+</head>
+<body>
+    <script>
+		
+		// ## 0.1 
+		let classNames = ['header', 'menu', 'menu_item', 'tabs',
+		 'tab_item', 'menu', 'link', 'tabs', 'tab_item', 'menu',
+		  'menu_item', 'menu', 'menu_item'];
+
+		let countElems = function(arr) {
+			let emptyObj = {}, sortedList = [];
+			arr.forEach(function(elem) {
+				if (!emptyObj[elem]) {
+					emptyObj[elem] = 1;
+				} else {
+					emptyObj[elem] += 1;
+				}
+			});
+			sortedList = Object.keys(emptyObj).sort(function (a, b) { return emptyObj[b] - emptyObj[a]; });
+			return emptyObj;
+		}
+		console.log(countElems(classNames));
+
+		</script>
+</body>
+</html>
