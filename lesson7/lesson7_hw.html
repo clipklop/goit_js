@@ -9,6 +9,7 @@
 <body>
     <script>
 		
+
 		// ## 0.1 
 		let classNames = ['header', 'menu', 'menu_item', 'tabs',
 		 'tab_item', 'menu', 'link', 'tabs', 'tab_item', 'menu',
@@ -26,7 +27,68 @@
 			sortedList = Object.keys(emptyObj).sort(function (a, b) { return emptyObj[b] - emptyObj[a]; });
 			return emptyObj;
 		}
-		console.log(countElems(classNames));
+		// console.log(countElems(classNames));
+
+
+		// ## 3. Lazily executing a function
+		function add(a, b) {
+			return a + b;
+		}
+		
+		function mul(a, b) {
+				return a * b;
+		}
+
+		var double = function (n) {
+				return n * 2;
+			};
+		
+		var make_lazy4  =  function  () {
+			let firstOne  =  arguments[0];
+			let allExceptOne  =  Array.prototype.slice.call(arguments,  1);
+			return function () {
+					if (allExceptOne.length == 1) {
+						return allExceptOne.map(firstOne)[0];
+					} else {
+						let argsCount  =  allExceptOne.reduce(firstOne);
+						return  argsCount;
+					}
+			}
+		}
+
+		// More elegant variation.
+		var make_lazy = function (fn) {
+				return fn.bind.apply(fn, arguments);
+			};
+		// let make_lazy = function () {
+		// 		let firstOne = arguments[0];
+		// 		let allExceptOne = Array.prototype.slice.call(arguments, 1);
+		// 		return function() {
+		// 			let argsCount = allExceptOne.reduce.call(function(a, b) {
+		// 				 return firstOne(a, b); 
+		// 			}, 0);
+		// 			return argsCount;
+		// 		}
+		// }
+		
+		// let lazy_value = make_lazy(mul, 3, 3)
+		
+		
+		// just leave it here
+		// Array.prototype.reduce.call(arguments, function (a, b) { return a + b; }, 0);
+		// function my(a, b, c) { let x = arguments; return Object.entries(x).slice(1).map(entry => entry) }
+		
+		// let make_lazy3 = function () {
+		// 	let firstOne  =  arguments[0]; 
+		// 	let allExceptOne  =  Array.prototype.slice.call(arguments,  1);
+		// 	return  function () { 
+		// 		let argsCount  =  allExceptOne.reduce(function (a,  b) { 
+		// 			return firstOne(a, b);
+		// 		},0);
+		// 			return  argsCount;
+		// 	}
+		// }
+
 
 		</script>
 </body>
