@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EVENTS</title>
+  <style>
+    #link {
+      background-color: #fff;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#" id="link">Link</a>
+
+  <script>
+
+    const getRandomColor = function() {
+      return "#" + ((1 << 24) * Math.random() | 0).toString(16);
+    }
+  
+    const onLinkClick = function() {
+      document.body.style.backgroundColor = getRandomColor();
+    }
+
+    link.addEventListener('click', onLinkClick);
+    
+  </script>
+</body>
+</html>
