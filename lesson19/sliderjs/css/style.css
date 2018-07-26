@@ -130,10 +130,9 @@ SlidesJS Required: These styles are required if you'd like a responsive slidesho
 
 .slider__images-wrap {
   font-size: 0;
-
   height: 529px;
-
   white-space: nowrap;
+  transition: margin 0.7s ease-out;
 }
 
 .slider__navigation {

@@ -4,6 +4,7 @@
 
 
 new Slider('.slider', {
-  direction: 'horizontal',
-  currentSlide: 2
+  direction: 'vertical',
+  currentSlide: 2,
+  changeInterval: 1500
 });
