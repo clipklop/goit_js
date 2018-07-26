@@ -6,14 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>EVENTS</title>
   <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      font: normal 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #232525;
+      padding-top:70px;
+      text-align: center;
+    }
+
     #link {
       background-color: #fff;
-      
+      padding: 5px;
+      border-radius: 5px;
+      color: #005;
+      font-size: 2em;
+      border: 2px solid #000000;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
 
+  <h1>Event Listener</h1>
   <a href="#" id="link">Link</a>
 
   <script>
@@ -26,7 +40,12 @@
       document.body.style.backgroundColor = getRandomColor();
     }
 
+    const onLinkClick2 = function() {
+      document.body.style.color = getRandomColor();
+    }
+
     link.addEventListener('click', onLinkClick);
+    link.addEventListener('click', onLinkClick2);
     
   </script>
 </body>
